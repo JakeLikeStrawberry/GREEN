@@ -1,3 +1,8 @@
+body {
+    background-image: url("C:\Users\bluer\Downloads\enlarge_mountain-hills-green-nature-in-summer-design-on-vector-illustration-background.jpg");
+    background-size: cover;
+}
+
 .parent {
     display: flex;
     flex-direction: column;
@@ -8,7 +13,9 @@
   
   .GREEN {
     margin-top: 5%;
+    font-size: 250%;
     color: green;
+    font-family:'Courier New', Courier, monospace
   }
 
   .GREEN_desc {
@@ -16,4 +23,24 @@
     color: black;
     font-style: italic;
   }
+
+  /* Style for the "Get Started" button */
+.get-started-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green background color */
+    color: #fff; /* White text color */
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 3%;   /* make lower for closer to paragraph  */
+}
+
+/* Hover effect for the button */
+.get-started-button:hover {
+    background-color: #45a049; /* Darker green background on hover */
+}
+
   

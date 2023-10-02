@@ -19,6 +19,7 @@ export default function Home() {
               expanding our coverage to include more locations in the future.
             </h3>
         </div>
+        <a href="/test" className = "get-started-button">Get Started</a>
       </div>
     );
   }
