@@ -1,0 +1,19 @@
+.parent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .GREEN {
+    margin-top: 5%;
+    color: green;
+  }
+
+  .GREEN_desc {
+    width: 50%;
+    color: black;
+    font-style: italic;
+  }
+  
