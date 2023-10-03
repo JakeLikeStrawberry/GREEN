@@ -1,6 +1,8 @@
-body {
-    background-image: url("C:\Users\bluer\Downloads\enlarge_mountain-hills-green-nature-in-summer-design-on-vector-illustration-background.jpg");
-    background-size: cover;
+.body1 {
+    /*background-image: url("/Users/DCFilippo/Downloads/mountain-hills-green-nature-in-summer-design-on-vector-illustration-background.jpg");
+    background-size: cover;*/
+    background-color: green;
+    min-height: 100vh;
 }
 
 .parent {
