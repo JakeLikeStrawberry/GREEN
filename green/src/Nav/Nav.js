@@ -5,6 +5,7 @@ import astronautHelmet from "../assets/astronaut-helmet.png";
 import deadEye from "../assets/dead-eye.png";
 import stack from "../assets/stack.png";
 import envelope from "../assets/envelope.png";
+import logo from '../assets/Logo.png'
 
 
 
@@ -36,6 +37,8 @@ export default function Navbar() {
         return "";
     }
   };
+
+
 
   const navPositionClass = getNavPositionClass();
   const pageTitle = getPageTitle();
