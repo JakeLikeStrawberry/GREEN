@@ -27,11 +27,11 @@ export default function Navbar() {
   const getPageTitle = () => {
     switch (location.pathname) {
       case "/":
-        return "HOME";
+        return "Home";
       case "/impact":
-        return "IMPACT";
+        return "Impact";
       case "/about":
-        return "ABOUT";
+        return "About";
       default:
         return "";
     }
@@ -46,31 +46,30 @@ export default function Navbar() {
     return navClass === navPositionClass;
   };
 
-  const renderNavLink = (to, /*imgSrc, altText,*/ navClass, pageTitle) => {
-    const isCurrent = isCurrentPage(navClass);
-    const linkClass = isCurrent ? "nav-link current" : "nav-link";
+  const renderNavLink = (to, navClass, pageTitle) => {
+  const isCurrent = isCurrentPage(navClass);
+  const linkClass = isCurrent ? "nav-link current" : "nav-link";
 
     return (
-      <Link to={to} className={linkClass}>
-        <h1 className="page-title">{pageTitle}</h1>
+      //<Link to={to} className="link-class">
+      <Link to={to} className={linkClass} style={{textDecoration:'none',   fontFamily: 'Monospace'}}>
+      <h1 className="page-title">{pageTitle}</h1>
       </Link>
     );
   };
 
   return (
-    <header className = "navHeader">
+    <>
       <img className="logo" src={logo}/>
       <nav className={`nav ${navPositionClass}`}>
         {renderNavLink(
           "/",
-        // astronautHelmet,
-        // "astronaut helmet icon",
           "nav-home",
-          "HOME"
+          "Home"
         )}
-        {renderNavLink("/impact", /*stack, "stack icon",*/ "nav-impact", "IMPACT")}
-        {renderNavLink("/about", /*deadEye, "deadEye icon",*/ "nav-about", "ABOUT")}
+        {renderNavLink("/impact", "nav-impact", "Impact")}
+        {renderNavLink("/about", "nav-about", "About")}
       </nav>
-    </header>
+      </>
   );
 }

@@ -25,7 +25,7 @@ export default class Home extends Component {
               expanding our coverage to include more locations in the future.
               </h3>
           </div>
-          <Link to="/impact" className = "get-started-button">Get Started</Link>
+          <Link to="/impact" className = "get-started-button" style={{ fontFamily: "Monospace" }}>Get Started</Link>
         </div>
       </div>
       </>;

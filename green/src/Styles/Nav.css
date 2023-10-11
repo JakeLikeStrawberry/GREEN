@@ -1,21 +1,26 @@
+
 .nav {
   position: fixed;
   display: flex;
   align-items: flex-start;
-  left: 45%;
+  left: 60%;
   top: 1rem;
-  gap: 1.5625rem;
+  gap: 5.5625rem;
 }
 
 .logo{
-  height: 80px;
-  width: 80px; 
+  position: absolute;
+  left: 8rem;
+  top: 1.2rem;
+  height: 40px;
+  width: 40px; 
 }
   
 .page-title {
-  font-size: 0.875rem;
-  color: rgb(255, 4, 4);
+  font-size: 1.2rem;
+  color: rgb(255, 255, 255);
   cursor: default;
+  font-weight: normal;
 }
   
 .nav-link {
@@ -24,26 +29,26 @@
   
 .nav-link:hover {
   opacity: 1;
+
 }
   
 .nav-link.current {
   opacity: 1;
 }
+
   
 @media (max-width: 1100px) {
+  .nav-home,
+  .nav-impact,
   .nav-about,
-  .nav-skills,
-  .nav-projects,
-  .nav-contact {
-  transform: translateX(0);
-}
+  
 .nav {
   top: calc(100vh - 8rem);
   transform: translateX(-50%);
 }
 
 .nav-link {
-  width: 2rem;
+  width: 1rem;
 }
 
 .page-title {
