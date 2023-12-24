@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom';
-import React, { Component } from "react";
+
 
 
 import React, { useState } from 'react';
@@ -111,7 +111,7 @@ const questions = [
   {
     id: 11,
     type: 'SelectOne',
-    questionText: 'Where is your project located?',
+    questionText: 'Is there a contract in place that states the following methods will be used on site? Both the contractor and the owner must agree to the way comissioning will be achieved.',
     options: [
       { text: 'Option 1', points: 5 },
       { text: 'Option 2', points: 10 },
@@ -120,8 +120,8 @@ const questions = [
   },
   {
     id: 12,
-    type: 'SelectOne',
-    questionText: 'Where is your project located?',
+    type: 'Based on the following chart, and the guidelines laid out in ashrae 90.1, does the project save more than 10 percent compared to other projects for new buildings, or 8 percent for existing builds?',
+    questionText: '',
     options: [
       { text: 'Option 1', points: 5 },
       { text: 'Option 2', points: 10 },
@@ -131,7 +131,7 @@ const questions = [
   {
     id: 13,
     type: 'SelectOne',
-    questionText: 'Where is your project located?',
+    questionText: 'Is there a plan in place to measure the energy used for at least a year of post occupation, implemented by one of the three ways shown below?',
     options: [
       { text: 'Option 1', points: 5 },
       { text: 'Option 2', points: 10 },
@@ -141,7 +141,7 @@ const questions = [
   {
     id: 14,
     type: 'SelectOne',
-    questionText: 'Where is your project located?',
+    questionText: "Does the project tie into the city's demand response program, or is it prepared to do so if the city does not have one?",
     options: [
       { text: 'Option 1', points: 5 },
       { text: 'Option 2', points: 10 },
@@ -151,7 +151,7 @@ const questions = [
   {
     id: 15,
     type: 'SelectOne',
-    questionText: 'Where is your project located?',
+    questionText: 'How much renewable energy does the site produce (1-13 percent)',
     options: [
       { text: 'Option 1', points: 5 },
       { text: 'Option 2', points: 10 },
@@ -161,7 +161,7 @@ const questions = [
   {
     id: 16,
     type: 'SelectOne',
-    questionText: 'Where is your project located?',
+    questionText: 'Does the project not use refriegerants, or if it does, does it meet the maximum limts as seen in the attached link',
     options: [
       { text: 'Option 1', points: 5 },
       { text: 'Option 2', points: 10 },
@@ -169,9 +169,9 @@ const questions = [
     ],
   },
   {
-    id: 1,
+    id: 17,
     type: 'SelectOne',
-    questionText: 'Where is your project located?',
+    questionText: "Is there a contract in place for at least two years that 35 percent of the buildings energy will be renewable as defined by green power?",
     options: [
       { text: 'Option 1', points: 5 },
       { text: 'Option 2', points: 10 },
@@ -179,9 +179,37 @@ const questions = [
     ],
   },
   {
-    id: 1,
+    id: 18,
     type: 'SelectOne',
-    questionText: 'Where is your project located?',
+    questionText: 'How much of the existing structure and envelope will the design keep?',
+    options: [
+      { text: '55%', points: 1 },
+      { text: '75%', points: 2 },
+      { text: '95%', points: 3 },
+    ],
+  },
+  {
+    id: 19,
+    type: 'SelectOne',
+    questionText: 'Does the design keep at least 50% of the non structural elements?',
+    options: [
+      { text: 'Yes', points: 1 },
+      { text: 'No', points: 0 },
+    ],
+  },
+  {
+    id: 20,
+    type: 'SelectOne',
+    questionText: 'How much construction waste is planned to be recycled (not reused)?',
+    options: [
+      { text: '50%', points: 1 },
+      { text: '75%', points: 2 },
+    ],
+  },
+  {
+    id: 21,
+    type: 'SelectOne',
+    questionText: 'How much of the project will be using salvaged refurbished or reused materials (from this site or others)?',
     options: [
       { text: 'Option 1', points: 5 },
       { text: 'Option 2', points: 10 },
@@ -189,183 +217,98 @@ const questions = [
     ],
   },
   {
-    id: 1,
+    id: 22,
     type: 'SelectOne',
-    questionText: 'Where is your project located?',
+    questionText: 'By weight, how many materials are manufactured within 500 miles of the project site?',
     options: [
-      { text: 'Option 1', points: 5 },
-      { text: 'Option 2', points: 10 },
-      { text: 'Option 3', points: 8 },
+      { text: '10%', points: 1 },
+      { text: '20%', points: 2 },
     ],
   },
   {
-    id: 1,
+    id: 23,
     type: 'SelectOne',
-    questionText: 'Where is your project located?',
+    questionText: 'How much of the building material is renewable material (e.g. wood)?',
     options: [
-      { text: 'Option 1', points: 5 },
-      { text: 'Option 2', points: 10 },
-      { text: 'Option 3', points: 8 },
+      { text: 'Below 2.5%', points: 0 },
+      { text: 'Above 2.5%', points: 1 },
     ],
   },
   {
-    id: 1,
+    id: 24,
     type: 'SelectOne',
-    questionText: 'Where is your project located?',
+    questionText: 'What percantage of the wood used in the project (including temporary construction) are FSC certified?',
     options: [
-      { text: 'Option 1', points: 5 },
-      { text: 'Option 2', points: 10 },
-      { text: 'Option 3', points: 8 },
+      { text: 'Below 50%', points: 0 },
+      { text: 'At least 50%', points: 1 },
     ],
   },
   {
-    id: 1,
+    id: 25,
     type: 'SelectOne',
-    questionText: 'Where is your project located?',
+    questionText: 'Will the building have monitors for CO2 for all indoor air intakes?',
     options: [
-      { text: 'Option 1', points: 5 },
-      { text: 'Option 2', points: 10 },
-      { text: 'Option 3', points: 8 },
+      { text: 'Yes', points: 1 },
+      { text: 'No', points: 0 },
     ],
   },
   {
-    id: 1,
+    id: 26,
     type: 'SelectOne',
-    questionText: 'Where is your project located?',
+    questionText: 'Will the provided mechanical systems exceeded Ashrae 62.1, or the other regional equivalent for ventilation by at least 30%?',
     options: [
-      { text: 'Option 1', points: 5 },
-      { text: 'Option 2', points: 10 },
-      { text: 'Option 3', points: 8 },
+      { text: 'Yes', points: 1 },
+      { text: 'No', points: 0 },
     ],
   },
   {
-    id: 1,
+    id: 27,
     type: 'SelectOne',
-    questionText: 'Where is your project located?',
+    questionText: 'Is there a clear plan to monitor how construction impacts air quality as defined by the relevant standards listed below:',
     options: [
-      { text: 'Option 1', points: 5 },
-      { text: 'Option 2', points: 10 },
-      { text: 'Option 3', points: 8 },
+      { text: 'Indoor', points: 1 },
+      { text: 'Outdoor', points: 1 },
+      { text: 'Both', points: 2 },
     ],
   },
   {
-    id: 1,
+    id: 28,
     type: 'SelectOne',
-    questionText: 'Where is your project located?',
+    questionText: 'Do each of the materials used meet or exceed the standards set by the following list:',
     options: [
-      { text: 'Option 1', points: 5 },
-      { text: 'Option 2', points: 10 },
-      { text: 'Option 3', points: 8 },
+      { text: 'Adhesives and sealants', points: 1 },
+      { text: 'Paints and coatings', points: 1 },
+      { text: 'Flooring systems', points: 1 },
+      { text: 'Composite wood agrifiber product', points: 1},
+      { text: 'All of the above', points: 4 },
     ],
   },
   {
-    id: 1,
+    id: 29,
     type: 'SelectOne',
-    questionText: 'Where is your project located?',
+    questionText: 'Does the project allow for separated entry ways that are designed and ventilated per the following specifications?',
     options: [
-      { text: 'Option 1', points: 5 },
-      { text: 'Option 2', points: 10 },
-      { text: 'Option 3', points: 8 },
+      { text: 'Yes', points: 1 },
+      { text: 'No', points: 0 },
     ],
   },
   {
-    id: 1,
+    id: 30,
     type: 'SelectOne',
-    questionText: 'Where is your project located?',
+    questionText: 'Does the project meet the standards of ASHRAE standard 55-2004, and is the performance intended to be mnonitored following construction?',
     options: [
-      { text: 'Option 1', points: 5 },
-      { text: 'Option 2', points: 10 },
-      { text: 'Option 3', points: 8 },
+      { text: 'Yes', points: 1 },
+      { text: 'Yes and monitored', points: 2 },
     ],
   },
   {
-    id: 1,
+    id: 31,
     type: 'SelectOne',
-    questionText: 'Where is your project located?',
+    questionText: 'Are 75% of the spaces daylight as laid out in the following tables?',
     options: [
-      { text: 'Option 1', points: 5 },
-      { text: 'Option 2', points: 10 },
-      { text: 'Option 3', points: 8 },
-    ],
-  },
-  {
-    id: 1,
-    type: 'SelectOne',
-    questionText: 'Where is your project located?',
-    options: [
-      { text: 'Option 1', points: 5 },
-      { text: 'Option 2', points: 10 },
-      { text: 'Option 3', points: 8 },
-    ],
-  },
-  {
-    id: 1,
-    type: 'SelectOne',
-    questionText: 'Where is your project located?',
-    options: [
-      { text: 'Option 1', points: 5 },
-      { text: 'Option 2', points: 10 },
-      { text: 'Option 3', points: 8 },
-    ],
-  },
-  {
-    id: 1,
-    type: 'SelectOne',
-    questionText: 'Where is your project located?',
-    options: [
-      { text: 'Option 1', points: 5 },
-      { text: 'Option 2', points: 10 },
-      { text: 'Option 3', points: 8 },
-    ],
-  },
-  {
-    id: 1,
-    type: 'SelectOne',
-    questionText: 'Where is your project located?',
-    options: [
-      { text: 'Option 1', points: 5 },
-      { text: 'Option 2', points: 10 },
-      { text: 'Option 3', points: 8 },
-    ],
-  },
-  {
-    id: 1,
-    type: 'SelectOne',
-    questionText: 'Where is your project located?',
-    options: [
-      { text: 'Option 1', points: 5 },
-      { text: 'Option 2', points: 10 },
-      { text: 'Option 3', points: 8 },
-    ],
-  },
-  {
-    id: 1,
-    type: 'SelectOne',
-    questionText: 'Where is your project located?',
-    options: [
-      { text: 'Option 1', points: 5 },
-      { text: 'Option 2', points: 10 },
-      { text: 'Option 3', points: 8 },
-    ],
-  },
-  {
-    id: 1,
-    type: 'SelectOne',
-    questionText: 'Where is your project located?',
-    options: [
-      { text: 'Option 1', points: 5 },
-      { text: 'Option 2', points: 10 },
-      { text: 'Option 3', points: 8 },
-    ],
-  },
-  {
-    id: 1,
-    type: 'SelectOne',
-    questionText: 'Where is your project located?',
-    options: [
-      { text: 'Option 1', points: 5 },
-      { text: 'Option 2', points: 10 },
-      { text: 'Option 3', points: 8 },
+      { text: 'Yes', points: 5 },
+      { text: 'Views', points: 10 },
+      { text: 'Both', points: 8 },
     ],
   },
 

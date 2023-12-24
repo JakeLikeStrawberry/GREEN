@@ -15,10 +15,10 @@ export default function Navbar() {
     switch (location.pathname) {
       case "/":
         return "nav-home";
-      case "/impact":
-        return "nav-impact";
       case "/about":
         return "nav-about";
+      case "/GREEN":
+        return "nav-GREEN";
       default:
         return "";
     }
@@ -28,8 +28,8 @@ export default function Navbar() {
     switch (location.pathname) {
       case "/":
         return "Home";
-      case "/impact":
-        return "Impact";
+      case "/GREEN":
+        return "GREEN";
       case "/about":
         return "About";
       default:
@@ -67,8 +67,8 @@ export default function Navbar() {
           "nav-home",
           "Home"
         )}
-        {renderNavLink("/impact", "nav-impact", "Impact")}
         {renderNavLink("/about", "nav-about", "About")}
+        {renderNavLink("/GREEN", "nav-GREEN", "GREEN")}
       </nav>
       </>
   );

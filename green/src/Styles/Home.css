@@ -1,7 +1,7 @@
 .body1 {
     /*background-image: url("/Users/DCFilippo/Downloads/mountain-hills-green-nature-in-summer-design-on-vector-illustration-background.jpg");
     background-size: cover;*/
-    background-color: green;
+    background-color: rgb(241, 245, 241);
     min-height: 100vh;
 }
 
@@ -16,7 +16,7 @@
   .GREEN {
     margin-top: 5%;
     font-size: 250%;
-    color: green;
+    color: rgb(100, 197, 97);
     font-family:'Courier New', Courier, monospace
   }
 
