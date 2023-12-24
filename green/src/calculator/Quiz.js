@@ -1,8 +1,6 @@
 import {Link} from 'react-router-dom';
 import React, { Component } from "react";
-
-
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 // Define an array of questions
 const questions = [
