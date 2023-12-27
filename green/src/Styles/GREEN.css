@@ -3,14 +3,20 @@
     min-height: 100vh;
 }
 
-.header{
+.page-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.green-page-title{
     margin-top: 5%;
-    display: center;
-    text-align: center;
+    font-size: 150%;
     color: rgb(100, 197, 97);
-    font-size: 25px;
     font-family:'Courier New', Courier, monospace
 }
+
 
 /* .section{
     margin-top: 5%;
@@ -27,13 +33,12 @@
 } */
 .section{
     margin-top: 5%;
-    display: center;
+    display: center;   
     text-align: center;
     border: 2px solid green;
     background-color: white;
     border-radius: 50px;
     width: 60%;
-    margin-left: 20%;
     padding: 5px;
     color: rgb(81, 129, 79);
 }
