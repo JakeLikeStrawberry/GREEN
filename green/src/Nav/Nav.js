@@ -1,11 +1,108 @@
-import React from "react";
+import React, { useState } from 'react';
+import { Button } from '../button/Button.js'
+import { Link } from 'react-router-dom';
+import '../Styles/Nav.css';
+import Dropdown from '../Dropdown/Dropdown.js';
+import logo from '../assets/Logo.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+function Nav() {
+  const [click, setClick] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
+
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
+
+  const onMouseEnter = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(true);
+    }
+  };
+
+  const onMouseLeave = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(false);
+    }
+  };
+
+  return (
+    <>
+      <nav className='navbar'>
+        <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+        <img className="logo" src={logo} alt='logo'/>
+          <i class='fab fa-firstdraft' />
+        </Link>
+        <div className='menu-icon' onClick={handleClick}>
+          <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+        </div>
+        <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+          <li className='nav-item'>
+            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+              Home 
+            </Link>
+          </li>
+          <li
+            className='nav-item'
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+          >
+            <Link
+              to='/about'
+              className='nav-links'
+              onClick={closeMobileMenu}
+            >
+              About <FontAwesomeIcon icon="fa-solid fa-caret-down" />
+            </Link>
+            {dropdown && <Dropdown />}
+          </li>
+          <li className='nav-item'>
+            <Link
+              to='/Green'
+              className='nav-links'
+              onClick={closeMobileMenu}
+            >
+              GREEN
+            </Link>
+          </li>
+          <li className='nav-item'>
+            <Link
+              to='/contact-us'
+              className='nav-links'
+              onClick={closeMobileMenu}
+            >
+              Contact Us
+            </Link>
+          </li>
+          <li>
+            <Link
+              to='/sign-up'
+              className='nav-links-mobile'
+              onClick={closeMobileMenu}
+            >
+              Sign Up
+            </Link>
+          </li>
+        </ul>
+        <Button />
+      </nav>
+    </>
+  );
+}
+
+export default Nav;
+
+/*import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../Styles/Nav.css";
 //import astronautHelmet from "../assets/astronaut-helmet.png";
 //import deadEye from "../assets/dead-eye.png";
 //import stack from "../assets/stack.png";
 //import envelope from "../assets/envelope.png";
-import logo from '../assets/Logo.png'
+
 
 
 export default function Navbar() {
@@ -52,8 +149,8 @@ export default function Navbar() {
 
     return (
       //<Link to={to} className="link-class">
-      <Link to={to} className={linkClass} style={{textDecoration:'none',   fontFamily: 'Monospace'}}>
-      <h1 className="page-title">{pageTitle}</h1>
+      <Link to={to} className={linkClass} style={{fontFamily: 'Georgia'}}>
+      <h1 className="page-title" style={{fontWeight:'normal'}}>{pageTitle}</h1>
       </Link>
     );
   };
@@ -73,3 +170,4 @@ export default function Navbar() {
       </>
   );
 }
+*/

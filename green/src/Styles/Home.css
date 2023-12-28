@@ -10,11 +10,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
   }
   
   .GREEN {
-    margin-top: 5%;
+    margin-top: 10%;
     font-size: 250%;
     color: rgb(100, 197, 97);
     font-family:'Courier New', Courier, monospace
