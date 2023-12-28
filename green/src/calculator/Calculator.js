@@ -1,17 +1,13 @@
 //import {Link} from 'react-router-dom';
 import React, { useState } from 'react';
 
-export default function Calculator() {
-  return (
-    <>
-      <h1 className='marketing'>CALCULATOR</h1>
-    </>
-  );
-}
-
-
-/*import {Link} from 'react-router-dom';
-import React, { useState } from 'react';
+// export default function Calculator() {
+//   return (
+//     <>
+//       <h1 className='marketing'>CALCULATOR</h1>
+//     </>
+//   );
+// }
 
 // Define an array of questions
 const questions = [
@@ -343,69 +339,82 @@ const SelectOneQuestion = ({ question, options, selectedOption, onChange }) => {
   );
 };
 
-const FreeResponseQuestion = ({ question, answer, onChange }) => {
-  return (
-    <div>
-      <h3>{question}</h3>
-      <textarea value={answer} onChange={onChange} />
-    </div>
-  );
-};
 
 const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [answers, setAnswers] = useState([]);
+  const [answers, setAnswers] = useState(Array(questions.length).fill(null));
 
-  const handleOptionChange = (event) => {
-    // Handle option change for SelectOne type question
-    // Update answers array with the selected option for the current question
-    const selectedOption = event.target.value;
-    setAnswers([...answers, { questionId: questions[currentQuestion].id, answer: selectedOption }]);
+  const handleNext = () => {
     setCurrentQuestion(currentQuestion + 1);
   };
 
-  const handleFreeResponseChange = (event) => {
-    // Handle text input change for FreeResponse type question
-    // Update answers array with the entered text for the current question
-    const enteredText = event.target.value;
-    setAnswers([...answers, { questionId: questions[currentQuestion].id, answer: enteredText }]);
-    setCurrentQuestion(currentQuestion + 1);
+  const handlePrevious = () => {
+    setCurrentQuestion(currentQuestion - 1);
   };
 
-  const renderQuestion = () => {
-    const currentQ = questions[currentQuestion];
-    switch (currentQ.type) {
+  const handleOptionChange = (questionId, selectedOption) => {
+    const newAnswers = [...answers];
+    newAnswers[questionId] = selectedOption;
+    setAnswers(newAnswers);
+  };
+
+  const renderQuestion = (question) => {
+    switch (question.type) {
       case 'SelectOne':
         return (
-          <SelectOneQuestion
-            question={currentQ.questionText}
-            options={currentQ.options}
-            selectedOption={''} // Add logic to handle selected option
-            onChange={handleOptionChange}
-          />
+          <div key={question.id}>
+            <h3>{question.questionText}</h3>
+            {question.options.map((option, index) => (
+              <div key={index}>
+                <input
+                  type="radio"
+                  id={`option${index}`}
+                  name={`question${question.id}`}
+                  value={option.text}
+                  checked={answers[question.id] === option.text}
+                  onChange={() => handleOptionChange(question.id, option.text)}
+                />
+                <label htmlFor={`option${index}`}>{option.text}</label>
+              </div>
+            ))}
+          </div>
         );
-      case 'FreeResponse':
-        return (
-          <FreeResponseQuestion
-            question={currentQ.questionText}
-            answer={''} // Add logic to handle entered text
-            onChange={handleFreeResponseChange}
-          />
-        );
+      // Add handling for other question types here if needed
+
       default:
         return null;
     }
   };
 
   return (
-    <div>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100vh', // Take full height of the viewport
+      }}
+    >
       <h1>Quiz</h1>
-      {currentQuestion < questions.length ? renderQuestion() : <p>Quiz completed!</p>}
+      <div style={{ textAlign: 'center' }}>
+        {currentQuestion > 0 && (
+          <button onClick={handlePrevious}>Previous Question</button>
+        )}
+        {currentQuestion < questions.length ? (
+          renderQuestion(questions[currentQuestion])
+        ) : (
+          <div>
+            <p>Quiz completed!</p>
+            <p>Answers: {JSON.stringify(answers)}</p>
+          </div>
+        )}
+        {currentQuestion < questions.length - 1 && (
+          <button onClick={handleNext}>Next Question</button>
+        )}
+      </div>
     </div>
   );
 };
 
 export default Quiz;
-
-
-*/
