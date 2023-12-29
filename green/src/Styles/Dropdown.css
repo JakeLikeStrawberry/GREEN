@@ -11,6 +11,7 @@
     border-radius: 4px;
     background: rgb(213, 226, 213);
     cursor: pointer;
+    border: 2px solid black;
   }
   
   .dropdown-menu :hover {

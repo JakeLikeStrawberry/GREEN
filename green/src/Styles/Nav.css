@@ -26,9 +26,9 @@
   grid-gap: 30px;
   list-style: none;
   text-align: center;
-  width: 70vw;
+  width: 68vw;
   justify-content: end;
-  margin-right: 7rem;
+  margin-right: 6rem;
 }
 
 .nav-item {
@@ -38,6 +38,7 @@
 }
 
 .about-link {
+  position: relative;
   font-size: 17px;
   color: rgb(0, 0, 0);
   padding: 0.5rem 1rem;
@@ -50,13 +51,23 @@
     transition: transform 0.5s ease 0s;
     transform: rotate(180deg);
   }
-  border-radius: 4px;
-  background: rgb(213, 226, 213);
   cursor: pointer;
   transition: all 0.3s ease-out;
   scale: 105%;
   color: var(--primary);
 }
+
+.nav-item-about{
+  display: flex;
+  align-items: center;
+  height: 80px;
+}/*
+.nav-item-about:hover{
+  border-radius: 4px;
+  background: rgb(213, 226, 213);
+  border: 2px solid black;
+}
+*/
 
 .nav-links {
   font-size: 17px;

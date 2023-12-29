@@ -47,7 +47,7 @@ function Nav() {
             </Link>
           </li>
           <li
-            className='nav-item'
+            className='nav-item-about'
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
           >
