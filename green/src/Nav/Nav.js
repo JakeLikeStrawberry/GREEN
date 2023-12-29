@@ -5,6 +5,7 @@ import '../Styles/Nav.css';
 import Dropdown from '../Dropdown/Dropdown.js';
 import logo from '../assets/Logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
 function Nav() {
   const [click, setClick] = useState(false);
@@ -55,7 +56,7 @@ function Nav() {
               className='nav-links'
               onClick={closeMobileMenu}
             >
-              About <FontAwesomeIcon icon="fa-solid fa-caret-down" />
+              About <FontAwesomeIcon icon={faCaretDown}/>
             </Link>
             {dropdown && <Dropdown />}
           </li>
