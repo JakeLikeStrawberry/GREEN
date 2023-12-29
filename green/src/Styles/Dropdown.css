@@ -1,19 +1,24 @@
 .dropdown-menu {
-    background: red;
-    width: 200px;
+    width: 150px;
     position: absolute;
-    top: 80px;
+    top: 63px;
+    left: 746px;
     list-style: none;
     text-align: start;
   }
   
   .dropdown-menu li {
-    background: rgb(118, 225, 118);
+    border-radius: 4px;
+    background: rgb(213, 226, 213);
     cursor: pointer;
   }
   
-  .dropdown-menu li:hover {
-    font-weight: 600;
+  .dropdown-menu :hover {
+    .dropdown-link{
+      transition: all 0.3s ease-out;
+      scale: 105%;
+      color: var(--primary);
+    }
   }
   
   .dropdown-menu.clicked {
@@ -21,16 +26,11 @@
   }
   
   .dropdown-link {
+    font-size: 17px;
+    font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: block;
-    height: 100%;
-    width: 100%;
     text-decoration: none;
     color: #000000;
-    padding: 16px;
+    padding: 15px;
   }
   
-  @media screen and (max-width: 960px) {
-    .fa-caret-down {
-      display: none;
-    }
-  }

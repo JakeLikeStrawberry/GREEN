@@ -53,10 +53,10 @@ function Nav() {
           >
             <Link
               to='/about'
-              className='nav-links'
+              className='about-link'
               onClick={closeMobileMenu}
             >
-              About <FontAwesomeIcon icon={faCaretDown}/>
+              About <FontAwesomeIcon icon={faCaretDown} className='caret'/>
             </Link>
             {dropdown && <Dropdown />}
           </li>
@@ -66,7 +66,7 @@ function Nav() {
               className='nav-links'
               onClick={closeMobileMenu}
             >
-              GREEN
+              Green
             </Link>
           </li>
           <li className='nav-item'>
