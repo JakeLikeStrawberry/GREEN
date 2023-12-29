@@ -10,6 +10,8 @@ import React, { useState } from 'react';
 // }
 
 // Define an array of questions
+
+
 const questions = [
   {
     id: 1,
@@ -341,14 +343,19 @@ const SelectOneQuestion = ({ question, options, selectedOption, onChange }) => {
 
 
 const Quiz = () => {
+  const [showSubmit, setShowSubmit] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState(Array(questions.length).fill(null));
 
   const handleNext = () => {
+    if (currentQuestion === questions.length - 2) {
+      setShowSubmit(true);
+    }
     setCurrentQuestion(currentQuestion + 1);
   };
-
+  
   const handlePrevious = () => {
+    setShowSubmit(false);
     setCurrentQuestion(currentQuestion - 1);
   };
 
@@ -356,6 +363,13 @@ const Quiz = () => {
     const newAnswers = [...answers];
     newAnswers[questionId] = selectedOption;
     setAnswers(newAnswers);
+  };
+
+  const handleSubmit = () => {
+    
+    alert(JSON.stringify(answers));
+    
+    // You can perform other actions like sending data to a server here
   };
 
   const renderQuestion = (question) => {
@@ -398,9 +412,6 @@ const Quiz = () => {
     >
       <h1>Quiz</h1>
       <div style={{ textAlign: 'center' }}>
-        {currentQuestion > 0 && (
-          <button onClick={handlePrevious}>Previous Question</button>
-        )}
         {currentQuestion < questions.length ? (
           renderQuestion(questions[currentQuestion])
         ) : (
@@ -409,8 +420,20 @@ const Quiz = () => {
             <p>Answers: {JSON.stringify(answers)}</p>
           </div>
         )}
+      </div>
+
+      {/* Static position for Next and Previous buttons */}
+      <div style={{ position: 'fixed', bottom: '20%', left: '20%' }}>
+        {currentQuestion > 0 && (
+          <button onClick={handlePrevious}>Previous Question</button>
+        )}
+      </div>
+      <div style={{ position: 'fixed', bottom: '20%', right: '20%' }}>
         {currentQuestion < questions.length - 1 && (
           <button onClick={handleNext}>Next Question</button>
+        )}
+        {showSubmit && (
+          <button onClick={handleSubmit}>Submit</button>
         )}
       </div>
     </div>
