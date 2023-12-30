@@ -37,16 +37,17 @@
   height: 80px;
 }
 
-.about-link {
+.impact-header {
   position: relative;
   font-size: 17px;
   color: rgb(0, 0, 0);
   padding: 0.5rem 1rem;
   text-decoration-line: none;
+  font-weight: normal;
   font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.about-link:hover {
+.impact-header:hover {
   .caret{
     transition: transform 0.5s ease 0s;
     transform: rotate(180deg);
@@ -55,12 +56,16 @@
   transition: all 0.3s ease-out;
   scale: 105%;
   color: var(--primary);
+  background: rgb(213, 226, 213);
+  border: 2px solid black;
+  border-radius: 4px;
 }
 
-.nav-item-about{
+.impact-item-about{
   display: flex;
   align-items: center;
   height: 80px;
+  
 }/*
 .nav-item-about:hover{
   border-radius: 4px;

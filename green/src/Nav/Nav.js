@@ -47,17 +47,16 @@ function Nav() {
             </Link>
           </li>
           <li
-            className='nav-item-about'
+            className='impact-item-about'
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
           >
-            <Link
-              to='/about'
-              className='about-link'
+            <h1
+              className='impact-header'
               onClick={closeMobileMenu}
             >
-              About <FontAwesomeIcon icon={faCaretDown} className='caret'/>
-            </Link>
+              Impact <FontAwesomeIcon icon={faCaretDown} className='caret'/>
+            </h1>
             {dropdown && <Dropdown />}
           </li>
           <li className='nav-item'>
