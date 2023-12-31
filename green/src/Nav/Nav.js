@@ -5,7 +5,7 @@ import '../Styles/Nav.css';
 import Dropdown from '../Dropdown/Dropdown.js';
 import logo from '../assets/Logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 function Nav() {
   const [click, setClick] = useState(false);
@@ -55,7 +55,7 @@ function Nav() {
               className='impact-header'
               onClick={closeMobileMenu}
             >
-              Impact <FontAwesomeIcon icon={faCaretDown} className='caret'/>
+              Impact <FontAwesomeIcon icon={faAngleDown} className='caret'/>
             </h1>
             {dropdown && <Dropdown />}
           </li>

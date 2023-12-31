@@ -38,6 +38,9 @@
 }
 
 .impact-header {
+  .caret{
+  margin-left:5px;
+  } 
   position: relative;
   font-size: 17px;
   color: rgb(0, 0, 0);
@@ -56,9 +59,9 @@
   transition: all 0.3s ease-out;
   scale: 105%;
   color: var(--primary);
-  background: rgb(213, 226, 213);
-  border: 2px solid black;
-  border-radius: 4px;
+  background: gainsboro;
+  border: 2px solid transparent;
+  border-radius: 8px;
 }
 
 .impact-item-about{
