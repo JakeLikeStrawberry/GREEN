@@ -7,13 +7,13 @@
     background: gainsboro;
     border: 2px solid transparent;
     text-align: start;
-    border-radius: 8px;
+    border-radius: 9px;
   }
   
   .dropdown-menu li {
     cursor: pointer;
     margin-left: 10px;
-    font-weight: bold;
+    font-weight: 600;
   }
   
   .dropdown-menu :hover {

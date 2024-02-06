@@ -61,7 +61,7 @@
   color: var(--primary);
   background: gainsboro;
   border: 2px solid transparent;
-  border-radius: 8px;
+  border-radius: 9px;
 }
 
 .impact-item-about{

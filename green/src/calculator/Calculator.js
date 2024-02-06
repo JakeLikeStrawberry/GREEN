@@ -1,5 +1,6 @@
 //import {Link} from 'react-router-dom';
 import React, { useState } from 'react';
+import '../Styles/Calculator.css'
 
 // export default function Calculator() {
 //   return (
@@ -376,7 +377,7 @@ const Quiz = () => {
     switch (question.type) {
       case 'SelectOne':
         return (
-          <div key={question.id}>
+          <div key={question.id} className='questionsSection'>
             <h3>{question.questionText}</h3>
             {question.options.map((option, index) => (
               <div key={index}>
@@ -401,17 +402,12 @@ const Quiz = () => {
   };
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '100vh', // Take full height of the viewport
-      }}
-    >
+    <div className='quizPage'>
+      <div className='quiz-header'>
+      <div className='quiz-title'>
       <h1>Quiz</h1>
-      <div style={{ textAlign: 'center' }}>
+      </div>
+      <div className='questionsContainer'>
         {currentQuestion < questions.length ? (
           renderQuestion(questions[currentQuestion])
         ) : (
@@ -421,14 +417,13 @@ const Quiz = () => {
           </div>
         )}
       </div>
-
       {/* Static position for Next and Previous buttons */}
-      <div style={{ position: 'fixed', bottom: '20%', left: '20%' }}>
+      <div className='prevButton'>
         {currentQuestion > 0 && (
           <button onClick={handlePrevious}>Previous Question</button>
         )}
       </div>
-      <div style={{ position: 'fixed', bottom: '20%', right: '20%' }}>
+      <div className='nextButton'>
         {currentQuestion < questions.length - 1 && (
           <button onClick={handleNext}>Next Question</button>
         )}
@@ -436,7 +431,8 @@ const Quiz = () => {
           <button onClick={handleSubmit}>Submit</button>
         )}
       </div>
-    </div>
+       </div>
+      </div>
   );
 };
 
