@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button } from '../button/Button.js'
 import { Link } from 'react-router-dom';
 import '../Styles/Nav.css';
-import Dropdown from '../dropdown/Dropdown.js';
+import Dropdown from '../Dropdown/Dropdown.js';
 import logo from '../assets/Logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';

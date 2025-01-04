@@ -4,7 +4,7 @@ import './Styles/App.css';
 import Home from './home/Home.js';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import About from './about/About.js';
-import Green from './GREEN/Green.js';
+import Green from './GREEN/GREEN.js';
 import Calculator from './calculator/Calculator.js';
 
 
